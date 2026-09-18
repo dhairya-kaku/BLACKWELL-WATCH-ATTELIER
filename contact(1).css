@@ -1,0 +1,344 @@
+
+/* BLACKWELL LIGHT SIDEBAR */
+#sidebar-toggle {
+    display: none;
+}
+
+.menu-button {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1002;
+    background: #fffdf8;
+    border: 1px solid #d8c7a1;
+    border-radius: 50%;
+    box-shadow: 0 8px 24px rgba(70, 55, 30, .10);
+}
+
+.menu-button span {
+    width: 22px;
+    height: 2px;
+    background: #2b2926;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -290px;
+    width: 290px;
+    height: 100vh;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #fffdf8 0%, #f5efe3 100%);
+    color: #2b2926;
+    border-right: 1px solid #dccdad;
+    box-shadow: 12px 0 35px rgba(60, 45, 25, .10);
+    transition: .4s ease;
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+    left: 0;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(35, 30, 20, .20);
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s ease;
+    z-index: 1000;
+}
+
+#sidebar-toggle:checked ~ .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.brand {
+    padding: 30px 20px 20px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.brand-logo {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #b9975b;
+    border-radius: 50%;
+    color: #a27b35;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+}
+
+.sidebar .brand h2 {
+    margin: 0;
+    color: #242321;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+.sidebar .brand p {
+    margin: 6px 0 0;
+    color: #8b806e;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 18px;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.navigation .nav-item a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #403b34;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    transition: .25s ease;
+}
+
+.navigation .nav-item a span {
+    width: 18px;
+    text-align: center;
+    color: #a27b35;
+    font-size: 16px;
+}
+
+.navigation .nav-item a:hover,
+.navigation .nav-item.active a {
+    background: #efe6d4;
+    border-color: #d7c39c;
+    color: #8c672b;
+}
+
+.sidebar-bottom {
+    margin: 25px 18px 25px;
+    padding-top: 18px;
+    border-top: 1px solid #dbcbae;
+    text-align: center;
+    color: #8b806e;
+}
+
+.sidebar-bottom h3 {
+    margin: 0 0 6px;
+    color: #a27b35;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    letter-spacing: 3px;
+}
+
+.sidebar-bottom p {
+    margin: 3px 0;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        width: 270px;
+        left: -270px;
+    }
+
+    .menu-button {
+        left: 16px;
+        top: 16px;
+    }
+
+    div{
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+body {
+    background: #f7f4ed;
+    color: #25231f;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h4, span{
+    color: goldenrod;
+}
+
+h4{
+    text-transform: uppercase;
+}
+
+.header{
+    background-color: white;
+    height: 200px;
+    padding: 50px;
+    border-top: goldenrod;
+    border-bottom: goldenrod;
+    border: 4px solid goldenrod;
+    display: flex;
+}
+
+.left1{
+    width: 50%;
+}
+
+.right1{
+    width: 50%;
+    background-image: url(watch1.png);
+    background-repeat: no-repeat;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    background-color: white;
+}
+
+h4, h1, p{
+    margin-left: 290px;
+    
+    margin-top: 10px;
+}
+
+h1{
+    font-size: 60px;
+    text-transform: uppercase;
+}
+
+p{
+    font-size: 30px;
+}
+
+.left h4{
+    font-size: 40px;
+}
+
+hr{
+    border: 2px solid goldenrod;
+    width: 60%;
+    margin-left: 290px;
+    
+}
+.hr{
+    width: 30px;
+    height: 3px;
+    color: goldenrod;
+    background-color: goldenrod;
+}
+
+.middle{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.left{
+    width: 50%;
+}
+
+.right{
+    width: 50%;;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 290px;
+    width: 50%;
+    font-size: 40px;
+}
+
+input, textarea{
+    margin-bottom: 20px;
+    padding: 20px;
+    font-size: 20px;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+}
+
+label{
+    margin-bottom: 10px;
+    color: goldenrod;
+}
+
+.hr2{
+    border: 2px solid goldenrod;
+    width: 2px;
+    height: 850px;
+    margin-left: 290px;
+    background-color: goldenrod;
+    margin-top: 50px;
+}
+
+button{
+    font-size: 20px;
+    cursor: pointer;
+
+    width: 100%;
+    max-width: 340px;
+    height: 50px;
+    border-radius: .2em;
+    box-shadow: inset 0 0 0 2px goldenrod;
+    background-color: goldenrod;
+    color: #fff;
+    transition: .6s ease;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+button:hover{
+    background-color: #fff;
+    color: goldenrod;
+}
+
+label{
+    text-transform: uppercase;
+}
+
+.nav{
+    display: flex;
+    border: 4px solid goldenrod;
+}
+
+.right3{
+    width: 50%;
+    
+}
+
+.left3{
+    width: 50%;
+    margin-right: 200px;
+}

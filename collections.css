@@ -1,0 +1,465 @@
+
+/* BLACKWELL LIGHT SIDEBAR */
+#sidebar-toggle {
+    display: none;
+}
+
+.menu-button {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1002;
+    background: #fffdf8;
+    border: 1px solid #d8c7a1;
+    border-radius: 50%;
+    box-shadow: 0 8px 24px rgba(70, 55, 30, .10);
+}
+
+.menu-button span {
+    width: 22px;
+    height: 2px;
+    background: #2b2926;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -290px;
+    width: 290px;
+    height: 100vh;
+    box-sizing: border-box;
+    background: linear-gradient(180deg, #fffdf8 0%, #f5efe3 100%);
+    color: #2b2926;
+    border-right: 1px solid #dccdad;
+    box-shadow: 12px 0 35px rgba(60, 45, 25, .10);
+    transition: .4s ease;
+    z-index: 1001;
+    overflow-y: auto;
+}
+
+#sidebar-toggle:checked ~ .sidebar {
+    left: 0;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(35, 30, 20, .20);
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s ease;
+    z-index: 1000;
+}
+
+#sidebar-toggle:checked ~ .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.brand {
+    padding: 30px 20px 20px;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.brand-logo {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #b9975b;
+    border-radius: 50%;
+    color: #a27b35;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+}
+
+.sidebar .brand h2 {
+    margin: 0;
+    color: #242321;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 4px;
+}
+
+.sidebar .brand p {
+    margin: 6px 0 0;
+    color: #8b806e;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 18px;
+}
+
+.nav-item {
+    width: 100%;
+}
+
+.navigation .nav-item a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 13px 15px;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #403b34;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    transition: .25s ease;
+}
+
+.navigation .nav-item a span {
+    width: 18px;
+    text-align: center;
+    color: #a27b35;
+    font-size: 16px;
+}
+
+.navigation .nav-item a:hover,
+.navigation .nav-item.active a {
+    background: #efe6d4;
+    border-color: #d7c39c;
+    color: #8c672b;
+}
+
+.sidebar-bottom {
+    margin: 25px 18px 25px;
+    padding-top: 18px;
+    border-top: 1px solid #dbcbae;
+    text-align: center;
+    color: #8b806e;
+}
+
+.sidebar-bottom h3 {
+    margin: 0 0 6px;
+    color: #a27b35;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    letter-spacing: 3px;
+}
+
+.sidebar-bottom p {
+    margin: 3px 0;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        width: 270px;
+        left: -270px;
+    }
+
+    .menu-button {
+        left: 16px;
+        top: 16px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f7f4ed;
+    color: #25231f;
+    overflow-x: hidden;
+}
+
+.collections-page {
+    min-height: 100vh;
+    padding: 95px 7vw 35px;
+    background: radial-gradient(circle at 20% 10%, rgba(205, 193, 169, .22), transparent 32%), #f6f3ec;
+}
+
+.collection-header {
+    max-width: 720px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.eyebrow {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #a27b35;
+}
+
+.gold-line {
+    width: 70px;
+    height: 1px;
+    background: #b9975b;
+    margin: 20px auto;
+}
+
+.collection-header h1 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(55px, 7vw, 92px);
+    font-weight: 400;
+    letter-spacing: 3px;
+    line-height: .9;
+}
+
+.collection-header h1 span {
+    color: #ad8544;
+}
+
+.intro {
+    max-width: 560px;
+    margin: 25px auto 0;
+    color: #77716a;
+    font-size: 13px;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.watch-grid {
+    max-width: 1250px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.watch-card {
+    position: relative;
+    min-height: 650px;
+    overflow: hidden;
+    background: #eee9df;
+    border: 1px solid #ddd4c4;
+    transition: .45s ease;
+}
+
+.watch-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 45px rgba(60, 48, 30, .12);
+}
+
+.watch-photo {
+    height: 390px;
+    background-image: url("main_watch.png");
+    background-size: cover;
+    background-position: 75% center;
+    transition: .6s ease;
+}
+
+.watch-card:hover .watch-photo {
+    transform: scale(1.04);
+}
+
+.noir .watch-photo {
+    filter: grayscale(.65) contrast(1.08);
+}
+
+.regent .watch-photo {
+    filter: sepia(.18);
+    background-position: 60% center;
+}
+
+.sovereign .watch-photo {
+    background-position: 82% center;
+}
+
+/* Additional BLACKWELL timepieces */
+.photo-1 {
+    background-position: 78% center;
+}
+
+.photo-2 {
+    background-position: 60% center;
+    filter: sepia(.22) brightness(1.03);
+}
+
+.photo-3 {
+    background-position: 84% center;
+    filter: contrast(1.12);
+}
+
+.photo-4 {
+    background-position: 70% center;
+    filter: sepia(.35) brightness(1.04);
+}
+
+.photo-5 {
+    background-position: 88% center;
+    filter: grayscale(.25) contrast(1.14);
+}
+
+.photo-6 {
+    background-position: 54% center;
+    filter: brightness(1.08) saturate(.75);
+}
+
+.photo-7 {
+    background-position: 76% center;
+    filter: sepia(.42) contrast(1.08);
+}
+
+.atelier,
+.imperial,
+.meridian,
+.monarch {
+    background: #ebe5d9;
+}
+
+
+.watch-number {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 2;
+    color: #9b763b;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+}
+
+.card-content {
+    padding: 30px;
+    background: rgba(250, 248, 242, .94);
+    min-height: 260px;
+}
+
+.collection-name {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #a27b35;
+}
+
+.card-content h2 {
+    margin-top: 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 34px;
+    line-height: .95;
+    font-weight: 500;
+}
+
+.details {
+    margin-top: 14px;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #77716a;
+}
+
+.price {
+    margin-top: 10px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    color: #38332d;
+}
+
+.discover {
+    display: inline-flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 18px;
+    color: #a27b35;
+    text-decoration: none;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid #b9975b;
+    padding-bottom: 5px;
+}
+
+.discover span {
+    font-size: 17px;
+    transition: .3s ease;
+}
+
+.discover:hover span {
+    transform: translateX(6px);
+}
+
+.page-footer {
+    max-width: 1250px;
+    margin: 45px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid #d8d0c2;
+    display: flex;
+    justify-content: space-between;
+    color: #817a70;
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+@media (max-width: 1100px) {
+    .watch-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 850px;
+    }
+}
+
+@media (max-width: 700px) {
+    .watch-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+    }
+
+    .watch-card {
+        min-height: auto;
+    }
+
+    .watch-photo {
+        height: 470px;
+    }
+}
+
+@media (max-width: 600px) {
+    .collections-page {
+        padding: 95px 18px 25px;
+    }
+
+    .collection-header {
+        margin-bottom: 45px;
+    }
+
+    .collection-header h1 {
+        font-size: 55px;
+    }
+
+    .intro {
+        font-size: 12px;
+    }
+
+    .watch-photo {
+        height: 370px;
+    }
+
+    .card-content {
+        padding: 25px;
+    }
+
+    .card-content h2 {
+        font-size: 31px;
+    }
+
+    .page-footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
